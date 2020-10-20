@@ -28,8 +28,8 @@ function clicked(event) {
     let x = event.clientX - rectt.left;
     let y = event.clientY - rectt.top;
     let basis = 100 / r;
-    let kekx = ((x - 150) / basis);
-    let keky = ((150 - y) / basis);
+    let kekx = ((x - 150) / basis).toFixed(2);
+    let keky = ((150 - y) / basis).toFixed(2);
 
 
 

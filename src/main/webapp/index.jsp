@@ -49,7 +49,7 @@
                 <input name="coordinateR" type="radio" value="2"> 2
                 <br><input name="coordinateR" type="radio" value="3"> 3
                 <input name="coordinateR" type="radio" value="4"> 4
-                <input name="coordinateR" type="radio" value="4"> 5
+                <input name="coordinateR" type="radio" value="5"> 5
 
                 <br class="coordinateRE">
             </div>

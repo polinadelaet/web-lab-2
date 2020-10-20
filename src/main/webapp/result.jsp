@@ -3,7 +3,7 @@
 <head>
     <title>Title</title>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <link rel="stylesheet" href="stylesheets/indexStyle.css">
+    <link rel="stylesheet" href="stylesheets/resultStyle.css">
 </head>
     <body>
         <h1>
@@ -25,8 +25,8 @@
                             <td>${results.get(results.size()-1).getHit()}</td>
                         </tr>
                 </table>
-            </div>>
+            </div>
         </div>
-        <p><a href="index.jsp">Как сделать такое же фото?</a></p>
+        <p id="back"><a href="index.jsp">Назад</a></p>
     </body>
 </html>

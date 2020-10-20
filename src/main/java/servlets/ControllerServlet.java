@@ -14,19 +14,19 @@ import java.util.Set;
 public class ControllerServlet extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String coordinateX = request.getParameter("coordinateX");
         String coordinateY = request.getParameter("coordinateY");
         String coordinateR = request.getParameter("coordinateR");
-        //boolean result = checkFormProcess(coordinateX, coordinateY, coordinateR);
 
 
-
-            getServletContext().getRequestDispatcher("/AreaCheckServlet").forward(request, response);
-
-        //    getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
-
+        getServletContext().getRequestDispatcher("/AreaCheckServlet").forward(request, response);
     }
 
     private boolean checkFormProcess(String coordinateX, String coordinateY, String coordinateR) {
