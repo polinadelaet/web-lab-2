@@ -19,7 +19,6 @@ public final class CheckHitPoint {
     }
 
     public static boolean checkHit(double x, double y, double r) {
-        boolean mem = isHitToFirstQuarter(x, y, r) || isHitToSecondQuarter(x, y, r) || isHitToThirdQuarter(x, y, r) || isHitToFourthQuarter(x, y, r);
         return isHitToFirstQuarter(x, y, r) || isHitToSecondQuarter(x, y, r) || isHitToThirdQuarter(x, y, r) || isHitToFourthQuarter(x, y, r);
     }
 }

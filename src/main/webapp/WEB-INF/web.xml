@@ -7,12 +7,12 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/ErrorHandler</location>
+        <location>/ErrorHandlerServlet</location>
     </error-page>
 
     <error-page>
         <exception-type>java.lang.Throwable</exception-type >
-        <location>/ErrorHandler</location>
+        <location>/ErrorHandlerServlet</location>
     </error-page>
 
 </web-app>

@@ -8,24 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @WebServlet(urlPatterns = "/controller")
 public class ControllerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/ErrorHandlerServlet").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String coordinateX = request.getParameter("coordinateX");
-        String coordinateY = request.getParameter("coordinateY");
-        String coordinateR = request.getParameter("coordinateR");
-
-
         getServletContext().getRequestDispatcher("/AreaCheckServlet").forward(request, response);
     }
 
@@ -49,7 +42,6 @@ public class ControllerServlet extends HttpServlet {
         } catch (NumberFormatException e) {
             return false;
         }
-        boolean kek = setX.contains(x) && (y > -4) && (y < 6) && (setR.contains(r));
         return setX.contains(x) && (y > -4) && (y < 6) && (setR.contains(r));
     }
 }

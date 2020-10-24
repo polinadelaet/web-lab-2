@@ -1,9 +1,8 @@
 package servlets;
 
-import model.Data;
+import model.Point;
 import service.CheckHitPoint;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,30 +10,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @WebServlet(urlPatterns = "/AreaCheckServlet")
 public class AreaCheckServlet extends HttpServlet {
 
-    private List<Data> results = new ArrayList<Data>();
-
+    private List<Point> results = new ArrayList<>();
+    private double coordinateX;
+    private double coordinateY;
+    private double coordinateR;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            coordinateX = Double.parseDouble(request.getParameter("coordinateX"));
+            coordinateY = Double.parseDouble(request.getParameter("coordinateY"));
+            coordinateR = Double.parseDouble(request.getParameter("coordinateR"));
+        } catch (NumberFormatException | NullPointerException e) {
+            getServletContext().getRequestDispatcher("/ErrorHandlerServlet").forward(request, response);
+        }
 
-        final double x = Double.parseDouble(request.getParameter("coordinateX"));
-        final double y = Double.parseDouble(request.getParameter("coordinateY"));
-        final double r = Double.parseDouble(request.getParameter("coordinateR"));
-
-        final boolean hit = CheckHitPoint.checkHit(x, y, r);
-
-        Data data = new Data(x, y, r, hit);
-        results.add(data);
+        boolean hit = CheckHitPoint.checkHit(coordinateX, coordinateY, coordinateR);
+        Point point = new Point(coordinateX, coordinateY, coordinateR, hit);
+        results.add(point);
 
         getServletContext().setAttribute("results", results);
-
         getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
     }
 }

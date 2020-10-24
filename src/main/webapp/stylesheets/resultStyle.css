@@ -1,7 +1,4 @@
 body {
-    /*color: aliceblue;
-    font-size: 30px;
-    min-width: 50%;*/
     background-image: url("../resources/IMG.jpg");
     background-size: cover;
 }
@@ -38,8 +35,7 @@ a:active {
 #back {
     font-size: 30px;
     color: #fef9ff;
-    margin-top: 10%;
-    margin-left: 10%;
+    margin-left: 50%;
 }
 
 .border {

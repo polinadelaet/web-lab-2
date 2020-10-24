@@ -27,6 +27,6 @@
                 </table>
             </div>
         </div>
-        <p id="back"><a href="index.jsp">Назад</a></p>
+        <p id="back" class="border"><a href="index.jsp">Назад</a></p>
     </body>
 </html>

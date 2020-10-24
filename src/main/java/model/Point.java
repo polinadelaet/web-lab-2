@@ -1,12 +1,12 @@
 package model;
 
-public class Data {
-    public final double x;
-    public final double y;
-    public final double r;
-    public final String hit;
+public class Point {
+    private final double x;
+    private final double y;
+    private final double r;
+    private final String hit;
 
-    public Data(double x, double y, double r, boolean hit) {
+    public Point(double x, double y, double r, boolean hit) {
         this.x = x;
         this.y = y;
         this.r = r;

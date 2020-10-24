@@ -101,6 +101,7 @@
 
         </svg>
     </div>
+    <div></div>
 
     <div id="table-wrapper">
         <div id="table-scroll">
@@ -117,12 +118,12 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <c:forEach items="${results}" var="d" >
+                <c:forEach items="${results}" var="point">
                     <tr id="op">
-                        <td id="${d.getX()}">${d.getX()}</td>
-                        <td class="y" id="${d.getY()}">${d.getY()}</td>
-                        <td class="r" id="${d.getR()}">${d.getR()}</td>
-                        <td>${d.getHit()}</td>
+                        <td class="x" id="${point.getX()}">${point.getX()}</td>
+                        <td class="y" id="${point.getY()}">${point.getY()}</td>
+                        <td class="r" id="${point.getR()}">${point.getR()}</td>
+                        <td>${point.getHit()}</td>
                     </tr>
                 </c:forEach>
             </table>
